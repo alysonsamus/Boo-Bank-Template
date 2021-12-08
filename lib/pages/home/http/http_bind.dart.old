@@ -1,0 +1,16 @@
+import 'package:boobank/pages/home/http/http_controller.dart';
+import 'package:boobank/pages/home/repository/i_cardbills_repository.dart';
+import 'package:get/get.dart';
+import 'repository/cardbills_http_repository.dart';
+
+class HttpBindings implements Bindings{
+
+  @override
+  Future<void> dependencies() async {
+    Get.put<ICardbillsRepository>(CardBillsHttpRepository());
+    Get.put(HttpController(Get.find()));
+
+
+  }
+
+}
